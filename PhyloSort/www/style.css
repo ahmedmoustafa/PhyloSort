@@ -1,0 +1,222 @@
+/* $Id: style.css,v 1.13 2009/01/11 01:46:36 ahmed Exp $ */
+
+@media screen {
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: arial,sans-serif;
+		color: black;
+		background-color: gray;
+		font-size: small;
+	}
+
+	#container {
+		margin: auto;
+		padding: 0;
+		width: 90%;
+		background-color: silver;
+		border: 1px solid black;
+	}
+
+	#header {
+		margin: 0;
+		padding: 0;
+		background-color: white;
+		border-bottom: 1px solid blue;
+	}
+
+	#menu {
+		margin: 0;
+		padding: 0;
+		float: left;
+		width: 15%;
+	}
+			
+	#content {
+		margin: 0;
+		padding: 0;
+		margin-left: 15%;
+		border-left: 1px dotted blue;
+		background-color: white;
+	}
+			
+	#footer {
+		margin: 0;
+		padding: 0;
+		clear: both;
+		text-align: right;
+		border-top: 1px solid blue;
+		font-size: x-small;
+	}
+
+	a {
+		color: navy;
+		text-decoration: none;
+	}
+
+	a:visited {
+		color: purple;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: navy;
+		background-color: #FFD700;
+		text-decoration: underline;
+	}
+
+	a:active {
+		color: white;
+		background-color: maroon;
+		text-decoration: underline;
+	}
+
+	h1 {
+		margin: 0;
+		padding: 0;
+		color: white;
+		background-color: black;
+	}
+
+	h2 {
+		margin: 0;
+		padding: 0;
+		color: white;
+		background-color: navy;
+	}
+	
+	h3 {
+		margin: 0;
+		padding: 0;
+		color: white;
+		background-color: maroon;
+	}
+	
+	h4 {
+		margin: 0;
+		padding: 0;
+		color: white;
+		background-color: olive;
+	}
+	
+	h1, h2, h3, h4 {
+		padding-left: 1%;
+	}
+	
+	p, pre, ul {
+		margin: 0;
+		padding-top: 0.5%;
+		padding-bottom: 0.5%;
+		padding-right: 2.0%;
+		padding-left: 2.5%;
+	}
+
+	img.screenshot {
+		border-style: solid;
+		border-color: black;
+		border-width: 2.5px;
+	}
+
+	img {
+		border-width: 1px;
+	}
+
+	div.syntax {
+		margin: 0;
+		padding: 0;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		font-family: code, courier, monospace;
+		border: 1px dotted red;
+		background-color: silver;
+		color: black;
+	}
+
+	code {
+		font-family: code, courier, monospace;
+	}
+}
+
+@media print {
+	body {
+		margin: auto;
+		font-family: arial,sans-serif;
+		font-size: 10px;
+	}
+	
+	h1 {
+		font-size: 12px;
+		font-weight: strong;
+	}
+
+	h2 {
+		font-size: 12px;
+		font-weight: strong;
+		font-style: italic;
+	}
+	
+	h3 {
+		font-size: 10px;
+		font-weight: strong;
+	}
+
+	h4 {
+		font-size: 10px;
+		font-weight: strong;
+		font-style: italic;
+	}
+
+	#container {
+	}
+
+	#header {
+	}
+
+	#menu {
+		display: none;
+	}
+			
+	#content {
+	}
+			
+	#footer {
+		display: none;
+	}
+
+	a {
+		color: black;
+		text-decoration: none;
+	}
+
+	a:visited {
+		color: black;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: black;
+		text-decoration: none;
+	}
+
+	a:active {
+		color: black;
+		text-decoration: underline;
+	}
+
+	img {
+		border-width: 1px;
+	}
+
+	div.syntax {
+		margin: 0;
+		padding: 0;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		font-family: code, courier, monospace;
+		border: 1px dotted red;
+	}
+
+	code {
+		font-family: code, courier, monospace;
+	}
+}

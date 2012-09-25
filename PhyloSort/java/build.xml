@@ -1,0 +1,60 @@
+<project name="phylosort" default="build" basedir=".">
+	<tstamp />
+	<property file="build.properties" />
+	<property name="build.version" value="${DSTAMP}${TSTAMP}"/>
+	<target name="clean" description="Delete the build directory">
+		<delete dir="${build.dir}" />
+	</target>
+	<target name="init" depends="clean">
+		<echo>JAVA_HOME: ${java.home}</echo>
+		
+		<mkdir dir="${build.dir}" />
+	</target>
+	<target name="compile" depends="init" description="Compile source code">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" debug="${debug}" optimize="${optimize}" deprecation="${deprecation}" classpath="${class.path}">
+			<include name="**/*.java" />
+		</javac>
+	</target>
+	<target name="resources" depends="init" description="Copy non-source code under the build directory">
+		<copy todir="${build.dir}/phylosort/ui/images">
+			<fileset dir="src/phylosort/ui/images">
+			</fileset>
+		</copy>
+	</target>
+	<target name="jar" depends="compile,resources">
+		<jar jarfile="${project.name}.jar" basedir="${build.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="phylosort.ui.PhyloSortCommandLine" />
+				<attribute name="Build-Timestamp" value="${build.version}" />
+				<attribute name="Current-Version" value="${current.version}" />
+			</manifest>
+		</jar>
+	</target>
+	<target name="build" depends="jar,clean" description="Build jar file" />
+	<target name="export" depends="" description="Export source code from CVS repository">
+		<delete dir="${src.dir}" />
+		<cvs cvsRoot="${cvs.root}" command="${export.command}" />
+	</target>
+	<target name="run" depends="jar">
+		<java jar="phylosort.jar" classpath="${class.path}" fork="true" />
+	</target>
+	<target name="javadoc" depends="init" description="Generate API Javadocs">
+		<mkdir dir="${javadoc.dir}" />
+		<javadoc
+			packagenames="${packagename}.*"
+			sourcepath="${src.dir}"
+			destdir="${javadoc.dir}"
+			author="${javadoc.author}"
+			version="${javadoc.version}"
+			use="${javadoc.use}"
+			private="${javadoc.private}"
+			windowtitle="${javadoc.window.title}"
+			doctitle="${javadoc.doc.title}"
+			header="${javadoc.header}"
+			footer="${javadoc.footer}"
+			bottom="${javadoc.bottom}"
+			stylesheetfile="${javadoc.style}"
+			classpath="${class.path}">
+		</javadoc>
+	</target>
+</project>

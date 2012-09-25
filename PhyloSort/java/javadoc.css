@@ -1,0 +1,38 @@
+/* javadoc.css style sheet */
+
+BODY {
+color: black;
+background: white;
+font-family: calibri, verdana, arial, georgia, times, serif;
+margin-left: 2.5%;
+margin-right: 2.5%;
+font-size: 85%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: yellow;
+	text-decoration: underline;
+}
+
+a:active {
+	background-color: green;
+	text-decoration: underline;
+}
+
+P, BLOCKQUOTE {
+text-align:justify;
+}
+
+
+img {
+	border-style: none;
+}
+
