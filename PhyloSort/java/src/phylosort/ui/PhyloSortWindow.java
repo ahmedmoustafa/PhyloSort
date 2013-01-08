@@ -2106,7 +2106,7 @@ private void jButtonGroupRemoveActionPerformed(java.awt.event.ActionEvent evt) {
         }
 
         buffer.append(Commons.getLineSeparator());
-        buffer.append("\u00A9 2007-2008");
+        buffer.append("\u00A9 2007-2012");
         buffer.append(Commons.getLineSeparator());
         buffer.append("Ahmed Moustafa & Debashish Bhattacharya");
         buffer.append(Commons.getLineSeparator());
@@ -2400,7 +2400,7 @@ private void jButtonGroupRemoveActionPerformed(java.awt.event.ActionEvent evt) {
 
             if (in.isFile() && in.canRead()) {
 
-                logger.info("Loading taxa from tree file \"" + file + "\"");
+                logger.info("Loading taxa # " + i + " from tree file \"" + file + "\"");
 
                 try {
                     taxa.addAll(TreeNodeUtil.getTaxa(in));
